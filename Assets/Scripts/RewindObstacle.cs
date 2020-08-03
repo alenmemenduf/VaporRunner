@@ -15,6 +15,7 @@ public class RewindObstacle : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
+       
         positions = new List<Vector3>();
     }
 
@@ -27,7 +28,8 @@ public class RewindObstacle : MonoBehaviour
         }else if (isPlayer && transform.position != targetPosition) //If player inside trigger and object hasn't reach it's final position you can record.
         {
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, targetPosition, step);
+            targetPosition.z = transform.position.z;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
             Record();
         }
     }
