@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class TileManager : MonoBehaviour
@@ -10,23 +11,35 @@ public class TileManager : MonoBehaviour
     public int numberOfTiles = 20;
     private List<GameObject> activeTiles = new List<GameObject>();
     public Transform playerTransform;
+    public PlayerMovement player;
 
     void Start()
     {
         for(int i=0;i<numberOfTiles;i++)
-            spawnTile(0);
+            spawnTile();
     }
     void Update()
     {
-        if(playerTransform.position.z - tileLength > zSpawn - (numberOfTiles * tileLength))
+        if (playerTransform.position.z - tileLength > zSpawn - (numberOfTiles * tileLength))
         {
-            spawnTile(0);
+            spawnTile();
             deleteTile();
         }
     }
-    public void spawnTile(int tileIndex)
+    public void spawnTile()
     {
-        GameObject ourGameObject = Instantiate(tilePrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
+        GameObject ourGameObject = Instantiate(tilePrefabs[0], transform.forward * zSpawn, transform.rotation);
+        //GameObject obstacle = Instantiate(tilePrefabs[Random.Range(1, 3)], ourGameObject.transform);
+        List<GameObject> obstacles = new List<GameObject>(3);
+        for(int i=0;i<2;i++)
+        {
+            int randomIndex = Random.Range(1, 4);
+            obstacles.Add(Instantiate(tilePrefabs[randomIndex],
+                                      ourGameObject.transform.position + tilePrefabs[randomIndex].transform.position + Vector3.forward * 6 * i,
+                                      tilePrefabs[randomIndex].transform.rotation,
+                                        ourGameObject.transform));
+        }
+            
         activeTiles.Add(ourGameObject);
         zSpawn += tileLength;
     }
@@ -34,5 +47,9 @@ public class TileManager : MonoBehaviour
     {
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
+    }
+
+    private void speedRandomizer(){
+        Debug.Log(player.forwardMoveSpeed);
     }
 }
