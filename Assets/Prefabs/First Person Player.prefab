@@ -392,7 +392,7 @@ MonoBehaviour:
   maxForwardSpeed: 110
   laneDistance: 1
   gravity: -100
-  jumpHeight: 5
+  jumpHeight: 1.6
 --- !u!1 &8823639124810350946
 GameObject:
   m_ObjectHideFlags: 0

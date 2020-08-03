@@ -29,16 +29,12 @@ public class TileManager : MonoBehaviour
     public void spawnTile()
     {
         GameObject ourGameObject = Instantiate(tilePrefabs[0], new Vector3(-0.5f,0.0f,zSpawn), transform.rotation);
-        //GameObject obstacle = Instantiate(tilePrefabs[Random.Range(1, 3)], ourGameObject.transform);
         List<GameObject> obstacles = new List<GameObject>(3);
-        for(int i=0;i<2;i++)
-        {
             int randomIndex = Random.Range(1, tilePrefabs.Length);
             obstacles.Add(Instantiate(tilePrefabs[randomIndex],
-                                      ourGameObject.transform.position + tilePrefabs[randomIndex].transform.position + Vector3.forward * 6 * i,
+                                      ourGameObject.transform.position + tilePrefabs[randomIndex].transform.position + Vector3.forward * Random.Range(1,7),
                                       tilePrefabs[randomIndex].transform.rotation,
                                         ourGameObject.transform));
-        }
             
         activeTiles.Add(ourGameObject);
         zSpawn += tileLength;
