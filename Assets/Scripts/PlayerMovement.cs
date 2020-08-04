@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private int desiredLane = 1;
 
     private Vector3 velocity;
-    bool isGrounded;
+    public bool isGrounded;
 
     void Start()
     {

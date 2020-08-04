@@ -22,7 +22,7 @@ Material:
     m_Floats:
     - Vector1_ADE1CD29: 0.95
     m_Colors:
-    - Color_B9A5A3CF: {r: 3.7708826, g: 0.50196075, b: 4, a: 0}
+    - Color_B9A5A3CF: {r: 1.2201058, g: 0.35493988, b: 2.3847523, a: 0}
     - Vector2_E8D4A374: {r: 1, g: 1, b: 0, a: 0}
     - Vector3_5A8EE15F: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
