@@ -262,7 +262,6 @@ GameObject:
   - component: {fileID: 415086009}
   - component: {fileID: 415086013}
   - component: {fileID: 415086012}
-  - component: {fileID: 415086011}
   - component: {fileID: 415086010}
   m_Layer: 0
   m_Name: Cube
@@ -270,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &415086009
 Transform:
   m_ObjectHideFlags: 0
@@ -320,19 +319,6 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!65 &415086011
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415086008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &415086012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -394,6 +380,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8823639124195509396, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d0a4feab672ae742a3a92765e105693, type: 2}
     - target: {fileID: 8823639124195509398, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.23
