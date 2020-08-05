@@ -18,7 +18,7 @@ public class SelectionController : MonoBehaviour
     {
         Transform cam = Camera.main.transform;
 
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) 
+        if (Input.GetMouseButton(0)) 
         {
             RewindObject();
         }
