@@ -1017,7 +1017,7 @@ MonoBehaviour:
   player: {fileID: 385404407}
   obstacleDespawnOffset: 3
   zPositionOfFirstObject: 40
-  distance: 8
+  distance: 10
 --- !u!4 &2098409383
 Transform:
   m_ObjectHideFlags: 0
