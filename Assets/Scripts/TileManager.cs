@@ -16,12 +16,13 @@ public class TileManager : MonoBehaviour
     public PlayerMovement player;
     public float obstacleDespawnOffset = 3f;
     public float zPositionOfFirstObject = 40f;
-    public float distance = 2f;
+    public float distanceBetweenObstacles = 2f;
+    public float distanceIncreaseRate = 0.001f;
 
     private bool firstObjectSpawned = false;
     private List<GameObject> activeCorridors = new List<GameObject>();   //This list contains tilePrefabs[0] which should be our corridor prefab.
     private List<GameObject> obstacles = new List<GameObject>();    //This list contains every other prefab, our obstacles.
-
+    private float distanceIncreased = 0f;
     void Start()
     {
         for (int i=0;i<numberOfCorridors;i++)
@@ -40,6 +41,10 @@ public class TileManager : MonoBehaviour
         {
             spawnObstacle();
             deleteObstacle();
+        }
+        if (player.forwardMoveSpeed < player.maxForwardSpeed)
+        {
+            distanceIncreased = distanceIncreaseRate * player.forwardMoveSpeed;
         }
     }
     public void spawnCorridor()
@@ -61,7 +66,7 @@ public class TileManager : MonoBehaviour
     private void spawnObstacle()
     {
         int randomIndex = UnityEngine.Random.Range(1, tilePrefabs.Length);
-        Vector3 distanceAhead = new Vector3(0, 0, distance);
+        Vector3 distanceAhead = new Vector3(0, 0, distanceBetweenObstacles);
         if (!firstObjectSpawned)
         {
             obstacles.Add(Instantiate(tilePrefabs[randomIndex],
@@ -71,7 +76,7 @@ public class TileManager : MonoBehaviour
         }
         else
             obstacles.Add(Instantiate(tilePrefabs[randomIndex],
-                                  tilePrefabs[randomIndex].transform.position + new Vector3(0, 0, obstacles[obstacles.Count-1].transform.position.z + distance),    // same as above, this time, however, we use ( "the position on z of the last object" + distance) instead of the base case.
+                                  tilePrefabs[randomIndex].transform.position + new Vector3(0, 0, obstacles[obstacles.Count-1].transform.position.z + distanceBetweenObstacles + distanceIncreased),    // same as above, this time, however, we use ( "the position on z of the last object" + distance affected by speed) instead of the base case.
                                   tilePrefabs[randomIndex].transform.rotation));
             
     }

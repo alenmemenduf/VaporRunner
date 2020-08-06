@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823639124313499214, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: forwardMoveSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8823639124313499214, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: maxForwardSpeed
@@ -1016,8 +1016,9 @@ MonoBehaviour:
   playerTransform: {fileID: 385404409}
   player: {fileID: 385404407}
   obstacleDespawnOffset: 3
-  zPositionOfFirstObject: 40
-  distance: 10
+  zPositionOfFirstObject: 20
+  distanceBetweenObstacles: 10
+  distanceIncreaseRate: 0.2
 --- !u!4 &2098409383
 Transform:
   m_ObjectHideFlags: 0
