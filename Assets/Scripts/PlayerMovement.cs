@@ -9,6 +9,7 @@ using UnityEngine.PlayerLoop;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    private CapsuleCollider collider;
 
     public Transform groundCheck;
     public float groundSphereRadius = 0.4f;
@@ -18,18 +19,19 @@ public class PlayerMovement : MonoBehaviour
     public float forwardMoveSpeed = 50f;
     public float maxForwardSpeed = 110f;
     public float laneDistance = 4f;
-
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
-
+    private Vector3 velocity;
     private int desiredLane = 1;
 
-    private Vector3 velocity;
     public bool isGrounded;
+    private float originalHeight;
+    public float reducedHeight;
 
     void Start()
     {
-
+        collider = GetComponentInChildren<CapsuleCollider>();
+        originalHeight = collider.height;
     }
 
     void Update()
@@ -59,6 +61,11 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            slide();
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+            getUpFromSlide();
+
         //Calculate where we should end up in the future
         Vector3 targetPosition = transform.position.z * Vector3.forward;
         if(desiredLane == 0)
@@ -78,12 +85,22 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        controller.height = collider.height;
     }
 
     private void MoveLane(bool goRight)
     {
         desiredLane += (goRight) ? 1 : -1;
         desiredLane = Mathf.Clamp(desiredLane, 0, 2);
+    }
+
+    private void slide()
+    {
+        collider.height = reducedHeight;
+    }
+    private void getUpFromSlide()
+    {
+        collider.height = originalHeight;
     }
 
 
