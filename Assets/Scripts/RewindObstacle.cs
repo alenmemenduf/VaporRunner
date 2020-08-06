@@ -14,7 +14,7 @@ public class RewindObstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialPosition = transform.position;
+        initialPosition = transform.parent.position;
        
         positions = new List<Vector3>();
     }
@@ -25,11 +25,11 @@ public class RewindObstacle : MonoBehaviour
         if (isRewinding)
         {
             Rewind();
-        }else if (isPlayer && transform.position != targetPosition) //If player inside trigger and object hasn't reach it's final position you can record.
+        }else if (isPlayer && transform.parent.position != targetPosition) //If player inside trigger and object hasn't reach it's final position you can record.
         {
             float step = speed * Time.deltaTime;
-            targetPosition.z = transform.position.z;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+            targetPosition.z = transform.parent.position.z;
+            transform.parent.position = Vector3.MoveTowards(transform.parent.position, targetPosition, step);
             Record();
         }
     }
@@ -45,14 +45,14 @@ public class RewindObstacle : MonoBehaviour
 
     void Record()
     {
-        positions.Insert(0, transform.position);
+        positions.Insert(0, transform.parent.position);
     }
 
     void Rewind()
     {
         if (positions.Count > 0)    //Makes sure index doesn't go out of bounds.
         {
-            transform.position = positions[0];
+            transform.parent.position = positions[0];
             positions.RemoveAt(0);
 
         }

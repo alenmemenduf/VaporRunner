@@ -8,35 +8,48 @@ public class SelectionController : MonoBehaviour
 
     public float rayLength = 4f;
     public LayerMask layerMask;
+    public Material originalMaterial;
 
+    public Color originalColor;
+    public Color selectedColor;
+    public float blinkingSpeed;
+
+    private float blinkStartTime;
+    private Renderer selectionRenderer;
     void Start()
     {
-        
+        blinkStartTime = Time.time;
     }
 
     void Update()
     {
         Transform cam = Camera.main.transform;
 
-        if (Input.GetMouseButton(0)) 
-        {
-            RewindObject();
-        }
-    }
-
-    void RewindObject()
-    {
-        Transform cam = Camera.main.transform;
-
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+    
         RaycastHit hit;
 
-        Debug.DrawRay(ray.origin, ray.direction, Color.green);
-  
-        if (Physics.Raycast(ray, out hit, rayLength, layerMask))
+        if (Physics.Raycast(cam.transform.position,cam.transform.forward, out hit, rayLength, layerMask))
         {
-            RewindObstacle obstacle = hit.transform.GetComponent<RewindObstacle>();
-            obstacle.StartRewind();
+            Transform selection = hit.transform;
+            RewindObstacle obstacle = selection.GetChild(0).GetComponent<RewindObstacle>();
+            selectionRenderer = selection.GetComponent<Renderer>();
+
+            float time = (Mathf.Sin(Time.time * blinkingSpeed) + 1);
+            selectionRenderer.material.color = Color.Lerp(originalColor, selectedColor, time);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                RewindObject(obstacle);
+            }
         }
+       
+      
+
+       
+    }
+
+    void RewindObject(RewindObstacle obstacle)
+    {
+        obstacle.StartRewind();
     }
 }
