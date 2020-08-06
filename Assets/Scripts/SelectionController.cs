@@ -34,12 +34,18 @@ public class SelectionController : MonoBehaviour
             RewindObstacle obstacle = selection.GetChild(0).GetComponent<RewindObstacle>();
             selectionRenderer = selection.GetComponent<Renderer>();
 
-            float time = (Mathf.Sin(Time.time * blinkingSpeed) + 1);
-            selectionRenderer.material.color = Color.Lerp(originalColor, selectedColor, time);
+            selectionRenderer.material.color = selectedColor;
 
             if (Input.GetMouseButtonDown(0))
             {
                 RewindObject(obstacle);
+            }
+        }
+        else
+        {
+            if (selectionRenderer)
+            {
+                selectionRenderer.material.color = originalColor;
             }
         }
        

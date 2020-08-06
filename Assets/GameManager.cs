@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public bool isGameOver = false;
     public Transform player;
+    public Transform selectionManager;
     void Start()
     {
         
@@ -25,5 +26,11 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<PlayerMovement>().enabled = false;
+
+        selectionManager.GetComponent<SelectionController>().enabled = false;
+        
+        Camera.main.transform.GetComponent<CameraController>().enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
+
     }
 }
