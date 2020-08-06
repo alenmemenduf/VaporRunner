@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class GameManager : MonoBehaviour
         {
             OnGameOver();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
     }
 
     public void OnGameOver()
@@ -32,5 +38,15 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.GetComponent<CameraController>().enabled = false;
         Cursor.lockState = CursorLockMode.Confined;
 
+        if (PlayerPrefs.GetInt("HighScore") < ScoreManager.score)
+        {
+            PlayerPrefs.SetInt("HighScore", ScoreManager.score);
+        }
+
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
