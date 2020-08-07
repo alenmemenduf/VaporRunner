@@ -6,13 +6,23 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool isGameOver = false;
+    public bool isGameOver = false;
     public Transform player;
     public Transform selectionManager;
     public GameObject gameOverMenu;
 
     public ScoreManager scoreManager;
 
+    public static GameManager instance = null;
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }else if(instance != this){
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         scoreManager = GetComponent<ScoreManager>();
@@ -62,7 +72,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.pause = true;
         gameOverMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.Confined;
+    
 
     }
 }

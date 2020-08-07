@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
             isPaused = !isPaused;
         }
 
-        if (isPaused && !GameManager.isGameOver)
+        if (isPaused)
         {
             ActivateMenu();
         }
