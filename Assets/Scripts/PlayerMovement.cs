@@ -27,11 +27,13 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     private float originalHeight;
     public float reducedHeight;
+    private float initialFOV;
 
     void Start()
     {
         collider = GetComponentInChildren<CapsuleCollider>();
         originalHeight = collider.height;
+        initialFOV = Camera.main.fieldOfView;
     }
 
     void Update()
@@ -96,10 +98,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void slide()
     {
+        groundCheck.position += Vector3.up * (collider.height - reducedHeight) / 2;
         collider.height = reducedHeight;
+        Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 30, Time.deltaTime * 0.001f);
     }
     private void getUpFromSlide()
     {
+        groundCheck.position += Vector3.up * (collider.height - originalHeight) / 2;
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, initialFOV, Time.deltaTime * 0.001f);
         collider.height = originalHeight;
     }
 
