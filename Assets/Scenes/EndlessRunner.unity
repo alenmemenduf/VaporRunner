@@ -2718,7 +2718,6 @@ MonoBehaviour:
   - {fileID: 2039626277159317434, guid: 1efdb78b39c64c447963286245caa8d6, type: 3}
   - {fileID: 5137417258246234899, guid: 3208a10a09510e7489a5eb40a028523a, type: 3}
   - {fileID: 4184011243838298557, guid: 1f1dd85bbf5efb34fa8c9901d9684e3e, type: 3}
-  - {fileID: 5238748666958367652, guid: 7a41323f0d6a89644992107ae6f0c29b, type: 3}
   zSpawn: 0
   corridorLength: 12
   numberOfCorridors: 20
@@ -2850,6 +2849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: First Person Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1888447694058756538, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1888447694058756548, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2893,6 +2896,10 @@ PrefabInstance:
     - target: {fileID: 1888447694058756548, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888447695702048488, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1888447695702048491, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: field of view

@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 2169626172443396442}
   - component: {fileID: 131831209706030114}
   - component: {fileID: 4966924885492514628}
-  - component: {fileID: 4157547181092265934}
-  - component: {fileID: 4157547181092265921}
   m_Layer: 9
   m_Name: Rewind Obstacle 5
   m_TagString: Obstacle
@@ -97,34 +95,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4157547181092265934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4157547181092265920}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648906778499ec646827116460df9ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: -0.5, y: 2, z: 0}
-  isRewinding: 0
-  speed: 20
---- !u!135 &4157547181092265921
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4157547181092265920}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5324083440577765055
 GameObject:

@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648906778499ec646827116460df9ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 1, y: 2, z: 0}
+  targetPosition: {x: 1, y: 0, z: 0}
   isRewinding: 0
   speed: 20
 --- !u!1 &5238748666958367652
@@ -72,8 +72,6 @@ GameObject:
   - component: {fileID: 8006655253092343102}
   - component: {fileID: 8130420934187290694}
   - component: {fileID: 3886424870856207136}
-  - component: {fileID: 5238748666958367658}
-  - component: {fileID: 5238748666958367653}
   m_Layer: 9
   m_Name: Rewind Obstacle 8
   m_TagString: Obstacle
@@ -157,32 +155,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5238748666958367658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238748666958367652}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648906778499ec646827116460df9ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: -0.5, y: 2, z: 0}
-  isRewinding: 0
-  speed: 20
---- !u!135 &5238748666958367653
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238748666958367652}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}

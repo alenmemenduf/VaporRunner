@@ -15,7 +15,7 @@ public class RewindObstacle : MonoBehaviour
     void Start()
     {
         initialPosition = transform.parent.position;
-       
+        targetPosition.z = transform.parent.position.z;
         positions = new List<Vector3>();
     }
 
@@ -27,11 +27,12 @@ public class RewindObstacle : MonoBehaviour
             Rewind();
         }else if (isPlayer && transform.parent.position != targetPosition) //If player inside trigger and object hasn't reach it's final position you can record.
         {
-            float step = speed * Time.deltaTime;
-            targetPosition.z = transform.parent.position.z;
-            transform.parent.position = Vector3.MoveTowards(transform.parent.position, targetPosition, step);
             Record();
+            float step = speed * Time.deltaTime;
+            transform.parent.position = Vector3.MoveTowards(transform.parent.position, targetPosition, step);
+            
         }
+       
     }
 
     public void StartRewind()

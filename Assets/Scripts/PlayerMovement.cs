@@ -93,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         controller.height = collider.height;
 
         cameraSlideEffect();
-        Debug.Log(isSliding);
     }
 
     private void MoveLane(bool goRight)
