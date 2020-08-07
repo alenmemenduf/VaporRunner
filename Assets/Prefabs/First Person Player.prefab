@@ -102,8 +102,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  horizontalMoveSpeed: 20
-  forwardMoveSpeed: 16
+  horizontalMoveSpeed: 25
+  forwardMoveSpeed: 15
   maxForwardSpeed: 40
   laneDistance: 1
   gravity: -100
@@ -711,6 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
+  rewindSpeedMultiplier: 20
 --- !u!120 &6937443540608514258
 LineRenderer:
   m_ObjectHideFlags: 0
