@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
-    m_HighlightedColor: {r: 0.8714713, g: 0.21226418, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
-    m_HighlightedColor: {r: 0.8714713, g: 0.21226418, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2349,7 +2349,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
-    m_HighlightedColor: {r: 0.8714713, g: 0.21226418, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2704,7 +2704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefabs:
   - {fileID: 7641667765882598094, guid: 7f014c5eba10dc94c9d2c84cfdd22b98, type: 3}
-  - {fileID: 4753593710841894025, guid: 809e486a1462a38488cafce38e379ff4, type: 3}
+  - {fileID: 7486962852904608942, guid: 809e486a1462a38488cafce38e379ff4, type: 3}
   - {fileID: 3008378666775482674, guid: a274568ae73fb2643946d7af382b5f1d, type: 3}
   - {fileID: 6237197402826548975, guid: dc43dcb7921c6eb49bb7b3a1f5866f5e, type: 3}
   - {fileID: 4578478107148055699, guid: 725c2ea54c822bd4894e640c59363fa6, type: 3}
@@ -2715,6 +2715,10 @@ MonoBehaviour:
   - {fileID: 3811146076568316380, guid: eea133243493dfd4db99eb19674f5566, type: 3}
   - {fileID: 6373486804005003366, guid: 6860eaccffe8692408c870c11399d407, type: 3}
   - {fileID: 4157547181092265920, guid: 919e763c43eb8b04380b24af9d7517e7, type: 3}
+  - {fileID: 2039626277159317434, guid: 1efdb78b39c64c447963286245caa8d6, type: 3}
+  - {fileID: 5137417258246234899, guid: 3208a10a09510e7489a5eb40a028523a, type: 3}
+  - {fileID: 4184011243838298557, guid: 1f1dd85bbf5efb34fa8c9901d9684e3e, type: 3}
+  - {fileID: 5238748666958367652, guid: 7a41323f0d6a89644992107ae6f0c29b, type: 3}
   zSpawn: 0
   corridorLength: 12
   numberOfCorridors: 20
@@ -2893,6 +2897,10 @@ PrefabInstance:
     - target: {fileID: 1888447695702048491, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: field of view
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937443539915906691, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
