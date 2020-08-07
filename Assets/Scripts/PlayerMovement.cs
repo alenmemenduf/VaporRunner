@@ -25,9 +25,12 @@ public class PlayerMovement : MonoBehaviour
     private int desiredLane = 1;
 
     public bool isGrounded;
+    private bool isSliding = false;
     private float originalHeight;
     public float reducedHeight;
     private float initialFOV;
+
+    private float cameraFOVInterpolation = 0.0f;
 
     void Start()
     {
@@ -88,6 +91,9 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
         controller.height = collider.height;
+
+        cameraSlideEffect();
+        Debug.Log(isSliding);
     }
 
     private void MoveLane(bool goRight)
@@ -98,15 +104,34 @@ public class PlayerMovement : MonoBehaviour
 
     private void slide()
     {
+        isSliding = true;
+        cameraFOVInterpolation = 0;
         groundCheck.position += Vector3.up * (collider.height - reducedHeight) / 2;
-        collider.height = reducedHeight;
-        Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 30, Time.deltaTime * 0.001f);
+        collider.height = reducedHeight;/*
+        Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 30, cameraFOVInterpolation);
+        if (cameraFOVInterpolation < 1)
+            cameraFOVInterpolation += 0.2f;*/
     }
     private void getUpFromSlide()
     {
+        isSliding = false;
+        cameraFOVInterpolation = 1;
         groundCheck.position += Vector3.up * (collider.height - originalHeight) / 2;
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, initialFOV, Time.deltaTime * 0.001f);
         collider.height = originalHeight;
+    }
+
+    private void cameraSlideEffect()
+    {
+        if(cameraFOVInterpolation <= 1 && isSliding)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 10, cameraFOVInterpolation);
+            cameraFOVInterpolation += 0.1f;
+        }
+        else if(!isSliding)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, initialFOV, cameraFOVInterpolation);
+            cameraFOVInterpolation -= 0.1f;
+        }
     }
 
 
