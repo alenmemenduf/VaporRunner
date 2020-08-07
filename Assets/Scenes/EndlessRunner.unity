@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 986731716}
+  player: {fileID: 8823639124398224126}
   isPaused: 0
 --- !u!114 &149005652
 MonoBehaviour:
@@ -2720,14 +2721,14 @@ MonoBehaviour:
   - {fileID: 4184011243838298557, guid: 1f1dd85bbf5efb34fa8c9901d9684e3e, type: 3}
   zSpawn: 0
   corridorLength: 12
-  numberOfCorridors: 20
+  numberOfCorridors: 12
   numberOfObstacles: 15
   playerTransform: {fileID: 8823639124398224127}
   player: {fileID: 8823639124398224126}
   obstacleDespawnOffset: 3
   zPositionOfFirstObject: 100
   distanceBetweenObstacles: 10
-  distanceIncreaseRate: 0.2
+  distanceIncreaseRate: 0.5
 --- !u!4 &2098409383
 Transform:
   m_ObjectHideFlags: 0
@@ -2896,6 +2897,14 @@ PrefabInstance:
     - target: {fileID: 1888447694058756548, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888447694058756549, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: forwardMoveSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888447694058756549, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: maxForwardSpeed
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1888447695702048488, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_Volume

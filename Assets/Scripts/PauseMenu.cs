@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
+    public PlayerMovement player;
 
     [SerializeField] private bool isPaused = false;
     void Update()
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = true;
         pauseMenuUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
+        player.enabled = false;
     }
 
     public void DeactivateMenu()
@@ -40,6 +42,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
+        player.enabled = true;
     }
 
     public void Exit()

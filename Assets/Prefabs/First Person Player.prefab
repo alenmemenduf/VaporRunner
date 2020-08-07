@@ -106,7 +106,7 @@ MonoBehaviour:
   forwardMoveSpeed: 18
   maxForwardSpeed: 50
   laneDistance: 1
-  gravity: -90
+  gravity: -100
   jumpHeight: 1.6
   isGrounded: 1
   reducedHeight: 1
