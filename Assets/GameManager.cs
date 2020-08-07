@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public bool isGameOver = false;
+    public static bool isGameOver = false;
     public Transform player;
     public Transform selectionManager;
+    public GameObject gameOverMenu;
+
+    public ScoreManager scoreManager;
+
     void Start()
     {
-        
+        scoreManager = GetComponent<ScoreManager>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (player.GetComponent<PlayerController>().isDead && !isGameOver)
@@ -36,17 +39,30 @@ public class GameManager : MonoBehaviour
         selectionManager.GetComponent<SelectionController>().enabled = false;
         
         Camera.main.transform.GetComponent<CameraController>().enabled = false;
-        Cursor.lockState = CursorLockMode.Confined;
 
-        if (PlayerPrefs.GetInt("HighScore") < ScoreManager.score)
+
+        if (PlayerPrefs.GetInt("HighScore") < scoreManager.score)
         {
-            PlayerPrefs.SetInt("HighScore", ScoreManager.score);
+            PlayerPrefs.SetInt("HighScore", scoreManager.score);
         }
+
+        ShowGameOverMenu();
 
     }
 
     public void Restart()
     {
+        isGameOver = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void ShowGameOverMenu()
+    {
+       
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        gameOverMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+
     }
 }

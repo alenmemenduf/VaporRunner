@@ -8,12 +8,18 @@ public class Score : MonoBehaviour
 {
     public Text scoreText;
     public Text highscoreText;
+
+    public Text gameOverScore;
+    public Text gameOverHighscore;
+
+    public ScoreManager scoreManager;
     private void Start()
     {
         highscoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
     }
     void Update()
     {
-        scoreText.text = ScoreManager.score.ToString();
+        scoreText.text = scoreManager.score.ToString();
+       
     }
 }

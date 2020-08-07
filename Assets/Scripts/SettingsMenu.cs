@@ -13,6 +13,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject mainMenuUI;
     public GameObject optionsMenuUI;
 
+
     Resolution[] resolutions;
 
     private void Start()
