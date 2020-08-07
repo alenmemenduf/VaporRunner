@@ -184,8 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 264414162}
   highscoreText: {fileID: 1619889679}
-  gameOverScore: {fileID: 0}
-  gameOverHighscore: {fileID: 0}
   scoreManager: {fileID: 1265428384}
 --- !u!1 &199613844
 GameObject:
@@ -1083,6 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9574eb3484b15264bb42c9e3d499a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameOver: 0
   player: {fileID: 8823639124398224127}
   selectionManager: {fileID: 1180707363}
   gameOverMenu: {fileID: 1461039835}
@@ -2727,7 +2726,7 @@ MonoBehaviour:
   player: {fileID: 8823639124398224126}
   obstacleDespawnOffset: 3
   zPositionOfFirstObject: 60
-  distanceBetweenObstacles: 6
+  distanceBetweenObstacles: 8
   distanceIncreaseRate: 0.17
 --- !u!4 &2098409383
 Transform:
@@ -2913,6 +2912,10 @@ PrefabInstance:
     - target: {fileID: 1888447695702048491, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: field of view
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937443539078756417, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
+      propertyPath: rewindSpeedMultiplier
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6937443539915906691, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_IsActive

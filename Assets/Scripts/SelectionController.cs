@@ -32,7 +32,6 @@ public class SelectionController : MonoBehaviour
     void Start()
     {
         blinkStartTime = Time.time;
-
     }
 
     void Update()
@@ -70,14 +69,13 @@ public class SelectionController : MonoBehaviour
             }
         }
        
-      
-
        
     }
 
     void RewindObject(RewindObstacle obstacle)
     {
         obstacle.StartRewind();
+        StartCoroutine(globeEnd.GetComponent<RotationScript>().RewindGlobe());
     }
 
     private IEnumerator ShotEffect()
