@@ -103,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   horizontalMoveSpeed: 20
-  forwardMoveSpeed: 20
+  forwardMoveSpeed: 18
   maxForwardSpeed: 50
   laneDistance: 1
   gravity: -90

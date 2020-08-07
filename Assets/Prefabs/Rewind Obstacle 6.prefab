@@ -153,6 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648906778499ec646827116460df9ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 2.5, z: 0}
+  targetPosition: {x: 0, y: 2.8, z: 0}
   isRewinding: 0
   speed: 20
