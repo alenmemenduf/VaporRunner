@@ -2718,6 +2718,9 @@ MonoBehaviour:
   - {fileID: 2039626277159317434, guid: 1efdb78b39c64c447963286245caa8d6, type: 3}
   - {fileID: 5137417258246234899, guid: 3208a10a09510e7489a5eb40a028523a, type: 3}
   - {fileID: 4184011243838298557, guid: 1f1dd85bbf5efb34fa8c9901d9684e3e, type: 3}
+  - {fileID: 3327994572448476082, guid: d49334f8ae0f95b44925f0e47657e2f7, type: 3}
+  - {fileID: 8869233431342742300, guid: 08eef7b6aba51fe48b74b27d68899d52, type: 3}
+  - {fileID: 7637611452461373022, guid: b8c822cd3bd9ac14c99c7d3475bd1b90, type: 3}
   zSpawn: 0
   corridorLength: 12
   numberOfCorridors: 12
@@ -2726,7 +2729,7 @@ MonoBehaviour:
   player: {fileID: 8823639124398224126}
   obstacleDespawnOffset: 3
   zPositionOfFirstObject: 60
-  distanceBetweenObstacles: 8
+  distanceBetweenObstacles: 7
   distanceIncreaseRate: 0.17
 --- !u!4 &2098409383
 Transform:
@@ -2898,12 +2901,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1888447694058756549, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
-      propertyPath: jumpHeight
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888447694058756549, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: forwardMoveSpeed
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1888447695702048488, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_Volume
@@ -2912,10 +2911,6 @@ PrefabInstance:
     - target: {fileID: 1888447695702048491, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: field of view
       value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937443539078756417, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
-      propertyPath: rewindSpeedMultiplier
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6937443539915906691, guid: 593e6b4453bb1194e9aff4a061ac2aea, type: 3}
       propertyPath: m_IsActive

@@ -103,11 +103,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   horizontalMoveSpeed: 20
-  forwardMoveSpeed: 17
+  forwardMoveSpeed: 16
   maxForwardSpeed: 40
   laneDistance: 1
   gravity: -100
-  jumpHeight: 1.6
+  jumpHeight: 1.5
   isGrounded: 1
   reducedHeight: 1
 --- !u!114 &6937443540514485058

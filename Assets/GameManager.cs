@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (player.GetComponent<PlayerController>().isDead && !isGameOver)
+        if (player.GetComponent<PlayerController>().isDead)
         {
             OnGameOver();
         }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     void ShowGameOverMenu()
     {
-       
+        Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0;
         AudioListener.pause = true;
         gameOverMenu.SetActive(true);
