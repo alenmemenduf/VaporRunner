@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Shot
-    clip: {fileID: 8300000, guid: 54a5d1d673eb1494ba1521468aa36a38, type: 3}
+    clip: {fileID: 8300000, guid: 257df28031ddca144a2630ca3b72119e, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

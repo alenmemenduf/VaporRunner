@@ -50,6 +50,7 @@ public class SelectionController : MonoBehaviour
                 StartCoroutine(globeEnd.GetComponent<RotationScript>().RewindGlobe());
                 scoreManager.increaseScore(scoreBonus);
                 RewindObject(obstacle);
+                AudioManager.instance.Play("Shot");
            
             }
         }
