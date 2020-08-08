@@ -19,7 +19,6 @@ public class SelectionController : MonoBehaviour
     public int scoreBonus;
 
     public Transform globeEnd;
-    public AudioSource laserAudio;
     public LineRenderer laserLine;
 
     public Color[] laserColors;
@@ -80,7 +79,7 @@ public class SelectionController : MonoBehaviour
 
     private IEnumerator ShotEffect()
     {
-        laserAudio.Play();
+        FindObjectOfType<AudioManager>().Play("Shot");
         laserLine.enabled = true;
         laserLine.material.color = laserColors[Random.Range(0, laserColors.Length)];
         yield return shotDuration;

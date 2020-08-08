@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CubeMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 93a0d99a4b2fcb14da317100c95c2cbc, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 8dd85dc39afd7d044a70e8fdbfa0e575, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,11 +20,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_ADE1CD29: 0.95
-    - _MaxDistance: 20
-    - _SomeNumber: 2
+    - Vector1_ADE1CD29: 0.96
     m_Colors:
-    - Color_B9A5A3CF: {r: 0.20692115, g: 1.172282, b: 1.9072729, a: 1}
+    - Color_B9A5A3CF: {r: 0.24964744, g: 1.4027808, b: 2.270603, a: 1}
     - Vector2_E8D4A374: {r: 1, g: 1, b: 0, a: 0}
     - Vector3_5A8EE15F: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
