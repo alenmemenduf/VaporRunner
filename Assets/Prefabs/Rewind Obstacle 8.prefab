@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648906778499ec646827116460df9ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 1, y: 0, z: 0}
+  targetPosition: {x: 1, y: 2, z: 0}
   isRewinding: 0
   speed: 20
 --- !u!1 &5238748666958367652

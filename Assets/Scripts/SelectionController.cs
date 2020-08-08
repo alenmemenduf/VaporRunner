@@ -19,13 +19,9 @@ public class SelectionController : MonoBehaviour
     public int scoreBonus;
 
     public Transform globeEnd;
-    public LineRenderer laserLine;
-
-    public Color[] laserColors;
 
     private Renderer selectionRenderer;
     private float blinkStartTime;
-    private WaitForSeconds shotDuration = new WaitForSeconds(.06f);
 
 
     void Start()
@@ -48,12 +44,10 @@ public class SelectionController : MonoBehaviour
             selectionRenderer = selection.GetComponent<Renderer>();
 
             selectionRenderer.material.color = selectedColor;
-            laserLine.SetPosition(0, globeEnd.position+Vector3.forward * 0.2f);
 
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(ShotEffect());
-                laserLine.SetPosition(1, hit.point);
+                StartCoroutine(globeEnd.GetComponent<RotationScript>().RewindGlobe());
                 scoreManager.increaseScore(scoreBonus);
                 RewindObject(obstacle);
            
@@ -61,7 +55,6 @@ public class SelectionController : MonoBehaviour
         }
         else
         {
-            laserLine.SetPosition(0, globeEnd.position);
             if (selectionRenderer)
             {
                 selectionRenderer.material.color = originalColor;
@@ -74,15 +67,5 @@ public class SelectionController : MonoBehaviour
     void RewindObject(RewindObstacle obstacle)
     {
         obstacle.StartRewind();
-        StartCoroutine(globeEnd.GetComponent<RotationScript>().RewindGlobe());
-    }
-
-    private IEnumerator ShotEffect()
-    {
-        FindObjectOfType<AudioManager>().Play("Shot");
-        laserLine.enabled = true;
-        laserLine.material.color = laserColors[Random.Range(0, laserColors.Length)];
-        yield return shotDuration;
-        laserLine.enabled = false;
     }
 }

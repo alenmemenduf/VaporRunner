@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         selectionManager.GetComponent<SelectionController>().enabled = false;
         
         Camera.main.transform.GetComponent<CameraController>().enabled = false;
+        AudioManager.instance.gameObject.SetActive(false);
 
 
         if (PlayerPrefs.GetInt("HighScore") < scoreManager.score)
