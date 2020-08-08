@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private float initialFOV;
 
     private float cameraFOVInterpolation = 0.0f;
+    public float heightInterpolation = 0.0f;
 
     void Start()
     {
@@ -47,10 +48,6 @@ public class PlayerMovement : MonoBehaviour
         //Creates a tiny sphere bellow player to check for collisions with the ground
         isGrounded = Physics.CheckSphere(groundCheck.position, groundSphereRadius, groundMask);
 
-        if(isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
 
         if (Input.GetKeyDown(KeyCode.D))      //If Player goes to right side.
         {
@@ -92,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
         controller.height = collider.height;
 
-        cameraSlideEffect();
+        slideEffect();
     }
 
     private void MoveLane(bool goRight)
@@ -105,31 +102,31 @@ public class PlayerMovement : MonoBehaviour
     {
         isSliding = true;
         cameraFOVInterpolation = 0;
-        groundCheck.position += Vector3.up * (collider.height - reducedHeight) / 2;
-        collider.height = reducedHeight;/*
-        Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 30, cameraFOVInterpolation);
-        if (cameraFOVInterpolation < 1)
-            cameraFOVInterpolation += 0.2f;*/
+        heightInterpolation = 0;
     }
     private void getUpFromSlide()
     {
         isSliding = false;
-        cameraFOVInterpolation = 1;
-        groundCheck.position += Vector3.up * (collider.height - originalHeight) / 2;
-        collider.height = originalHeight;
+        cameraFOVInterpolation = 0;
+        heightInterpolation = 0;
     }
 
-    private void cameraSlideEffect()
+    private void slideEffect()
     {
-        if(cameraFOVInterpolation <= 1 && isSliding)
-        {
+        if(isSliding){
             Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 10, cameraFOVInterpolation);
+            collider.height = Mathf.Lerp(collider.height, reducedHeight, heightInterpolation);
+
             cameraFOVInterpolation += 0.1f;
+            heightInterpolation += 0.1f;
+            //collider.height = reducedHeight;
         }
-        else if(!isSliding)
-        {
+        else{
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, initialFOV, cameraFOVInterpolation);
-            cameraFOVInterpolation -= 0.1f;
+            collider.height = Mathf.Lerp(collider.height, originalHeight, heightInterpolation);
+
+            cameraFOVInterpolation += 0.1f;
+            heightInterpolation += 0.1f;
         }
     }
 
