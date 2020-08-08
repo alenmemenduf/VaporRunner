@@ -105,11 +105,13 @@ MonoBehaviour:
   horizontalMoveSpeed: 25
   forwardMoveSpeed: 15
   maxForwardSpeed: 40
+  speedIncreaseRate: 0.15
   laneDistance: 1
   gravity: -100
   jumpHeight: 1.5
   isGrounded: 1
   reducedHeight: 1
+  heightInterpolation: 0
 --- !u!114 &6937443540514485058
 MonoBehaviour:
   m_ObjectHideFlags: 0

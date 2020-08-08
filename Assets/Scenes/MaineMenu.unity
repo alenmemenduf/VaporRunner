@@ -640,6 +640,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 673866258}
   mainMenuUI: {fileID: 7045069}
   optionsMenuUI: {fileID: 2012041496}
+  slider: {fileID: 941956244}
 --- !u!114 &289807228
 MonoBehaviour:
   m_ObjectHideFlags: 0

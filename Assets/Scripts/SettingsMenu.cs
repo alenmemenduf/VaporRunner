@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
+
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -12,12 +12,21 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
     public GameObject mainMenuUI;
     public GameObject optionsMenuUI;
+    public Slider slider;
 
 
     Resolution[] resolutions;
+    private void Awake()
+    {
+        float volumeValue = 0f;
+        audioMixer.GetFloat("volume", out volumeValue);
 
+        slider.value = volumeValue;
+    }
     private void Start()
     {
+        
+
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();

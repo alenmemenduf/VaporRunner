@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalMoveSpeed = 10f;
     public float forwardMoveSpeed = 50f;
     public float maxForwardSpeed = 110f;
+    public float speedIncreaseRate = 0.2f;
     public float laneDistance = 4f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        forwardMoveSpeed += 0.1f * Time.deltaTime;
+        forwardMoveSpeed += speedIncreaseRate * Time.deltaTime;
         forwardMoveSpeed = Mathf.Clamp(forwardMoveSpeed, 0f, maxForwardSpeed);
 
         //Creates a tiny sphere bellow player to check for collisions with the ground
