@@ -19,13 +19,14 @@ Name: *RedWhale*
 * **Cristian Rosiu** - [cristianrosiu](https://github.com/cristianrosiu)
 
 ## Credits
-### Background music:
-* Nihilore - [Bush Week]http://www.nihilore.com/synthwave/#itemId=5926b3649f7456fb49efb792
-### Quality Assurance:
+Background music:
+* Nihilore - [Bush Week](http://www.nihilore.com/synthwave/#itemId=5926b3649f7456fb49efb792)
+
+Quality Assurance:
 * Andrei Voinea
 * Daniel Drobnitchi
 
-### Coding and tutorials:
+Coding and tutorials:
 The host, [Brackeys](https://www.youtube.com/user/Brackeys) :)
  
 ## License
