@@ -27,7 +27,7 @@ Quality Assurance:
 * Daniel Drobnitchi
 
 Coding and tutorials:
-The host, [Brackeys](https://www.youtube.com/user/Brackeys) :)
+* The host, [Brackeys](https://www.youtube.com/user/Brackeys) :)
  
 ## License
 All rights reserved.
