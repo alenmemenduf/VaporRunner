@@ -5,7 +5,7 @@ We made this endless runner for the 7-days long Brackeys 2020.2 Game Jam that ha
 ## Getting started
 
 If you want to play the game jump in here: 
-* [VaporRunner] https://alenmemenduf.itch.io/vaporrunner
+* [VaporRunner](https://alenmemenduf.itch.io/vaporrunner)
 
 ## Instructions
 * A/D - Switch the lane to left/right
