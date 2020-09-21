@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,6 +10,16 @@ public class PauseMenu : MonoBehaviour
     public PlayerMovement player;
 
     [SerializeField] private bool isPaused = false;
+
+    public CameraController camController;
+
+    public Slider sensitivitySlider;
+
+    private void Start()
+    {
+        sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,6 +35,8 @@ public class PauseMenu : MonoBehaviour
         {
             DeactivateMenu();
         }
+
+        
     }
 
     public void ActivateMenu()
@@ -48,5 +61,11 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void ChangeSensitivity()
+    {
+        PlayerPrefs.SetFloat("sensitivity", sensitivitySlider.value);
+        camController.mouseSensitivity = sensitivitySlider.value;
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
-    public float mouseSensitivity = 100f;
+    [Range(200f, 500f)]
+    public float mouseSensitivity;
 
     public Transform player;
 

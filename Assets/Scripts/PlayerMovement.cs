@@ -24,8 +24,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 3f;
     private Vector3 velocity;
     private int desiredLane = 1;
+    public float cameraRotationAngle = 10f;
 
     public bool isGrounded;
+    public Animator handsAnimator;
+
+
     private bool isSliding = false;
     private float originalHeight;
     public float reducedHeight;
@@ -91,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         controller.height = collider.height;
 
         slideEffect();
+        handsAnimator.SetBool("isSliding", isSliding);
     }
 
     private void MoveLane(bool goRight)
@@ -104,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
         isSliding = true;
         cameraFOVInterpolation = 0;
         heightInterpolation = 0;
+        
     }
     private void getUpFromSlide()
     {
@@ -115,7 +121,9 @@ public class PlayerMovement : MonoBehaviour
     private void slideEffect()
     {
         if(isSliding){
-            Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 10, cameraFOVInterpolation);
+            Camera.main.transform.Rotate(Camera.main.transform.forward * cameraRotationAngle);
+
+            Camera.main.fieldOfView = Mathf.Lerp(initialFOV, initialFOV + 6, cameraFOVInterpolation);
             collider.height = Mathf.Lerp(collider.height, reducedHeight, heightInterpolation);
 
             cameraFOVInterpolation += 0.1f;
@@ -123,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
             //collider.height = reducedHeight;
         }
         else{
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, initialFOV, cameraFOVInterpolation);
+           Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, initialFOV, cameraFOVInterpolation);
             collider.height = Mathf.Lerp(collider.height, originalHeight, heightInterpolation);
 
             cameraFOVInterpolation += 0.1f;
